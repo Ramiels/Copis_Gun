@@ -42,17 +42,6 @@ end
 mod_settings = 
 {
 	{
-		id = "legacy_bullet",
-		ui_name = "Legacy bullet",
-		ui_description = "enables the old bullet spell, overwrites magnum mode",
-		value_default = false,
-		scope = MOD_SETTING_SCOPE_NEW_GAME,
-	},
-	{
-		ui_fn = mod_setting_vertical_spacing,
-		not_setting = true,
-	},
-	{
 		id = "magnum_bullet",
 		ui_name = "Magnum bullet",
 		ui_description = "your gun uses oversized bullets!",
