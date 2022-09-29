@@ -13,15 +13,27 @@ local function vsc_set( name, type, val )
     end
 end
 
-local props = {}
-local vsc_comps = EntityGetComponentIncludingDisabled(GetUpdatedEntityID(), "VariableStorageComponent")
-for _, comp in ipairs(vsc_comps) do
-    local name = ComponentGetValue2( comp, "name" )
-    local value = ComponentGetValue2( comp, "value_int" )
-    local prop = {name, value}
-    table.insert(props)
+-- Thanks for the help gus!
+local function get_data_from_vsc(id)
+    local data = {}
+    local vsc = EntityGetComponentIncludingDisabled(id, "VariableStorageComponent")
+    for _, v in ipairs(vsc) do
+        local name = ComponentGetValue2(v, "name")
+        local t = ComponentGetValue2(v, "_tags")
+        local value = ComponentGetValue2(v, "value_int") or ComponentGetValue2(v, "value_string") or ComponentGetValue2(v, "value_bool") or ComponentGetValue2(v, "value_float")
+        if (type(value) == "string") and t ~= "string" then
+            if t == "bool" then value = (value == "true" and true or false) end
+            if t == "int" or t == "float" then value = tonumber(value) end
+        end
+        table.insert(data, {
+            name = name,
+            value = value
+        })
+    end
+    return data
 end
 
+local props = get_data_from_vsc(entity_id)
 
 local recharge = true
 
