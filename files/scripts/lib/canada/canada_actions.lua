@@ -1,6 +1,6 @@
-dofile_once("mods/copis_gun/files/scripts/lib/canada_util.lua")
+dofile_once("CANADA_PATHcanada_util.lua")
 
-local ammo = setmetatable({},{
+local canada_card = setmetatable({},{
     __index = function(t, k)
     end,
     __newindex = function(t, k, v)
