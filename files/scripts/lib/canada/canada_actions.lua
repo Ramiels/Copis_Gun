@@ -1,11 +1,26 @@
 dofile_once("CANADA_PATHcanada_util.lua")
+local CanadaCard = {}
+function CanadaCard:New(id)
+    local o = {}
+    o.cardId = id
+    setmetatable(o, {
+        __index = function(t,k)
+            if k == "ammo" then return self:GetAmmo(t.card) end
+            return self[k]
+        end,
+        __newindex = function(t, k, v)
+            if k == "ammo" then return self:SetAmmo(t.card, v) end
+        end    
+    })
+    function self:New()
+        return nil
+    end;
+    return o
+end
 
-local canada_card = setmetatable({},{
-    __index = function(t, k)
-    end,
-    __newindex = function(t, k, v)
-    end
-})
+function CreateCard(id)
+    return CanadaCard:New(id)
+end
 
 function IsActionUnlimited( entity , action )
     local unlimited = false
@@ -23,30 +38,24 @@ function CurrentCard( entity )
     return mycard
 end
 
-function CardGetAmmo(card)
+function CanadaCard:GetAmmo()
     if IsActionUnlimited( GetUpdatedEntityID() ) then
         return 1
     else
-        local vsc = EntityGetFirstComponentIncludingDisabled( card, "VariableStorageComponent", "ammo_system_remaining" );
+        local vsc = EntityGetFirstComponentIncludingDisabled( self.cardId, "VariableStorageComponent", "ammo_system_remaining" );
         if vsc ~= nil then
             return ComponentGetValue2( vsc, "value_int" )
         end
     end
 end
 
-function CardSetAmmo(card, count)
+function CanadaCard:SetAmmo(count)
     if IsActionUnlimited( GetUpdatedEntityID() ) then
         return
     else
-        local vsc = EntityGetFirstComponentIncludingDisabled( card, "VariableStorageComponent", "ammo_system_remaining" );
+        local vsc = EntityGetFirstComponentIncludingDisabled( self.cardId, "VariableStorageComponent", "ammo_system_remaining" );
         if vsc ~= nil then
             ComponentSetValue2( vsc, "value_int", count )
         end
     end
 end
-
-
-
--- card.ammo = ammo 
--- ammo = card.ammo
--- metatable?????? (?)
