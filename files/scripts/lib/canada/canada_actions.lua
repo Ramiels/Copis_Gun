@@ -5,11 +5,11 @@ function CanadaCard:New(id)
     o.cardId = id
     setmetatable(o, {
         __index = function(t,k)
-            if k == "ammo" then return self:GetAmmo(t.card) end
+            if k == "ammo" then return self:GetAmmo() end
             return self[k]
         end,
         __newindex = function(t, k, v)
-            if k == "ammo" then return self:SetAmmo(t.card, v) end
+            if k == "ammo" then return self:SetAmmo(v) end
         end    
     })
     function self:New()
