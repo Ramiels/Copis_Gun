@@ -1,4 +1,13 @@
-local function get_data_from_vsc(id)
+function CollectComponents( entity_id )
+    local comps = {}
+    local comp_ids = EntityGetAllComponents( entity_id )
+    for _, comp in ipairs(comp_ids) do
+        table.insert(comps, { id = comp, members = ComponentGetMembers(comp)})
+    end
+end
+
+-- Thanks for the help gus!
+function get_data_from_vsc(id)
     local data = {}
     local vsc = EntityGetComponentIncludingDisabled(id, "VariableStorageComponent")
     for _, v in ipairs(vsc) do
@@ -15,13 +24,4 @@ local function get_data_from_vsc(id)
         })
     end
     return data
-end
-
-
-function CollectComponents( entity_id )
-    local comps = {}
-    local comp_ids = EntityGetAllComponents( entity_id )
-    for _, comp in ipairs(comp_ids) do
-        table.insert(comps, { id = comp, members = ComponentGetMembers(comp)})
-    end
 end
