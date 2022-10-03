@@ -1,0 +1,3 @@
+[submodule "CANADA_lib"]
+	path = CANADA_lib
+	url = https://github.com/Ramiels/CANADA_lib

@@ -1,4 +1,4 @@
-dofile_once("mods/copis_gun/lib/canada/init.lua").init("mods/copis_gun/lib/canada")
+dofile_once("mods/copis_gun/CANADA_lib/init.lua").init("mods/copis_gun/CANADA_lib")
 ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/copis_gun/files/scripts/gun/actions.lua" )
 
 

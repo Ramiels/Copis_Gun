@@ -1,4 +1,4 @@
-dofile_once("mods/copis_gun/files/scripts/lib/canada_actions.lua")
+dofile_once("mods/copis_gun/CANADA_lib/canada_actions.lua")
 
 local to_insert = {
 
