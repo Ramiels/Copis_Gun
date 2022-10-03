@@ -1,4 +1,3 @@
-local entity_id = GetUpdatedEntityID()
 
 local function vsc_val( name )
     local vsc = EntityGetFirstComponentIncludingDisabled( entity_id, "VariableStorageComponent", name );
@@ -39,9 +38,9 @@ local recharge = true
 
 -- Don't recharge while shooting attribute
 if props.ammo_system_recharge_while_shooting ~= true then
-    local shooterControls = self:root().ControlsComponent
+    local shooterControls = EntityGetComponent(EntityGetRootEntity(GetUpdatedEntityID()), "ControlsComponent")
     if shooterControls then
-        if shooterControls.mButtonDownFire then
+        if ComponentGetValue2(shooterControls, mButtonDownFire) then
             recharge = false
         end
     end
