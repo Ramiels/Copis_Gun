@@ -41,8 +41,14 @@ function getAmmoManager(id)
     return setmetatable({}, {
         __index = function(t, k)
             local vsc = EntityGetFirstComponentIncludingDisabled(id, "VariableStorageComponent", k);
+            local type
+            if k == "ammo_system_recharge_time" or k == "ammo_system_capacity" or k == "ammo_system_remaining" then
+                type = "value_int"
+            elseif k == "ammo_system_recharge_while_shooting" or k == "ammo_system_locked" then
+                type = "value_bool"
+            end
             if vsc ~= nil then
-                return
+                return ComponentGetValue2(vsc, type)
             end
         end,
         __newindex = function(t, k, v)
