@@ -10,6 +10,7 @@ end
 function get_data_from_vsc(id)
     local data = {}
     local vsc = EntityGetComponentIncludingDisabled(id, "VariableStorageComponent")
+    if vsc == nil then return nil end
     for _, v in ipairs(vsc) do
         local name = ComponentGetValue2(v, "name")
         local t = ComponentGetValue2(v, "_tags")

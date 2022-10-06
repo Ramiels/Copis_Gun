@@ -48,13 +48,13 @@
 
     <LuaComponent
         _tags="enabled_in_inventory,enabled_in_hand"
-        script_source_file="mods/copis_spellbook/files/scripts/gun/ammo_controller.lua"
+        script_source_file="mods/copis_gun/files/scripts/gun/ammo_controller.lua"
         execute_every_n_frame="1"
         ></LuaComponent>
 
     <LuaComponent
         _tags="enabled_in_hand"
-        script_source_file="mods/copis_spellbook/files/scripts/gun/ammo_display.lua"
+        script_source_file="mods/copis_gun/files/scripts/gun/ammo_display.lua"
         execute_every_n_frame="1"
         ></LuaComponent>
 
