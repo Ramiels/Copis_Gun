@@ -40,7 +40,7 @@ end
 function getAmmoManager(id)
     return setmetatable({}, {
         __index = function(t, k)
-            local vsc = EntityGetFirstComponentIncludingDisabled(id, "VariableStorageComponent", k);
+            local vsc = EntityGetComponentIncludingDisabled(id, "VariableStorageComponent");
             local comp
             local type
             for _=1, #vsc do local v = vsc[_] 
@@ -54,7 +54,7 @@ function getAmmoManager(id)
             end
         end,
         __newindex = function(t, k, v)
-            local vsc = EntityGetFirstComponentIncludingDisabled(id, "VariableStorageComponent", k);
+            local vsc = EntityGetComponentIncludingDisabled(id, "VariableStorageComponent");
             local comp
             local type
             for _=1, #vsc do local val = vsc[_] 
