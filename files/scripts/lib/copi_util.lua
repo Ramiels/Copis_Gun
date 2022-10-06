@@ -41,26 +41,30 @@ function getAmmoManager(id)
     return setmetatable({}, {
         __index = function(t, k)
             local vsc = EntityGetFirstComponentIncludingDisabled(id, "VariableStorageComponent", k);
+            local comp
             local type
-            if k == "ammo_system_recharge_time" or k == "ammo_system_capacity" or k == "ammo_system_remaining" then
-                type = "value_int"
-            elseif k == "ammo_system_recharge_while_shooting" or k == "ammo_system_locked" then
-                type = "value_bool"
+            for _=1, #vsc do local v = vsc[_] 
+                if ComponentGetValue2(v, "name") == k then 
+                    comp = v
+                    type = ComponentGetValue2(v, "_tags")
+                end
             end
             if vsc ~= nil then
-                return ComponentGetValue2(vsc, type)
+                return ComponentGetValue2(comp, type)
             end
         end,
         __newindex = function(t, k, v)
-            local type
-            if k == "ammo_system_recharge_time" or k == "ammo_system_capacity" or k == "ammo_system_remaining" then
-                type = "value_int"
-            elseif k == "ammo_system_recharge_while_shooting" or k == "ammo_system_locked" then
-                type = "value_bool"
-            end
             local vsc = EntityGetFirstComponentIncludingDisabled(id, "VariableStorageComponent", k);
+            local comp
+            local type
+            for _=1, #vsc do local val = vsc[_] 
+                if ComponentGetValue2(v, "name") == k then 
+                    comp = val
+                    type = ComponentGetValue2(val, "_tags")
+                end
+            end
             if vsc ~= nil then
-                ComponentSetValue2(vsc, type, v)
+                ComponentSetValue2(comp, type, v)
             end
         end
     })
