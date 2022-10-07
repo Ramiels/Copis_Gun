@@ -37,34 +37,38 @@ function get_data_from_vsc(id)
     return data
 end
 
+local prop_types = {
+    ammo_system_recharge_time = "int",
+    ammo_system_capacity = "int",
+    ammo_system_remaining = "int",
+    ammo_system_recharge_while_shooting = "bool",
+    ammo_system_locked = "bool",
+}
+
 function getAmmoManager(id)
     return setmetatable({}, {
         __index = function(t, k)
             local vsc = EntityGetComponentIncludingDisabled(id, "VariableStorageComponent");
             local comp
-            local type
             for _=1, #vsc do local v = vsc[_] 
                 if ComponentGetValue2(v, "name") == k then 
                     comp = v
-                    type = ComponentGetValue2(v, "_tags")
                 end
             end
             if vsc ~= nil then
-                return ComponentGetValue2(comp, type)
+                return ComponentGetValue2(comp, ("value_%s"):format(prop_types[k]))
             end
         end,
         __newindex = function(t, k, v)
             local vsc = EntityGetComponentIncludingDisabled(id, "VariableStorageComponent");
             local comp
-            local type
             for _=1, #vsc do local val = vsc[_] 
                 if ComponentGetValue2(v, "name") == k then 
                     comp = val
-                    type = ComponentGetValue2(val, "_tags")
                 end
             end
             if vsc ~= nil then
-                ComponentSetValue2(comp, type, v)
+                ComponentSetValue2(comp, ("value_%s"):format(prop_types[k]), v)
             end
         end
     })
