@@ -5,7 +5,7 @@
 
         <ItemActionComponent
             _tags="enabled_in_world"
-            action_id="COPIS_SPELLBOOK_BOLT_STRIKER"
+            action_id="COPIS_GUN_SILVER_BULLET"
             ></ItemActionComponent>
     </Base>
 
