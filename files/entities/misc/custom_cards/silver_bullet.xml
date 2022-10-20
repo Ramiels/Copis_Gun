@@ -1,7 +1,7 @@
 <Entity>
 
     <Base file="data/entities/base_custom_card.xml">
-        <SpriteComponent image_file="mods/copis_spellbook/files/ui_gfx/gun_actions/bolt_striker.png"></SpriteComponent>
+        <SpriteComponent image_file="mods/copis_gun/files/ui_gfx/gun_actions/silver_bullet.png"></SpriteComponent>
 
         <ItemActionComponent
             _tags="enabled_in_world"
