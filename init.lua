@@ -13,3 +13,26 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 		GameAddFlagRun("copis_gun_spawned")
 	end
 end
+
+function OnWorldPostUpdate()    -- Handle resetting display iteration
+    GlobalsSetValue("copi_gun_display_iter", "0")
+end
+
+
+-- Add translations
+local function append_translations( filepath, translation_file )
+    if translation_file == nil then
+        translation_file = "data/translations/common.csv";
+    end
+    local translations = ModTextFileGetContent( translation_file );
+    if translations ~= nil then
+        while translations:find("\r\n\r\n") do
+            translations = translations:gsub("\r\n\r\n","\r\n");
+        end
+        local new_translations = ModTextFileGetContent( filepath );
+        translations = translations .. new_translations;
+        ModTextFileSetContent( translation_file, translations );
+    end
+end
+
+append_translations( "mods/copis_gun/files/translations/common.csv" );
