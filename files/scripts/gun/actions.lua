@@ -23,13 +23,12 @@ local to_insert = {
             end
             if (recursion_level or iteration) ~= nil then return; end
 
-            local card = CurrentCard()
-            local ammo = getAmmoManager(card)
-            if (ammo.ammo_system_remaining > 0) then
+            local canada_card = CanadaCard(CurrentCard(GetUpdatedEntityID()))
+            if (canada_card.ammo > 0) then
                 add_projectile("mods/copis_gun/files/entities/projectiles/silver_bullet.xml")
                 c.screenshake = c.screenshake + 0.1
                 c.damage_critical_chance = c.damage_critical_chance + 20
-                ammo.ammo_system_remaining = ammo.ammo_system_remaining - 1
+                canada_card.ammo = canada_card.ammo - 1
             else
                 local x, y = EntityGetTransform(GetUpdatedEntityID())
                 GamePlaySound( "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/blank", x, y )

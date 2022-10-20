@@ -2,11 +2,15 @@ dofile_once("mods/copis_gun/CANADA_lib/init.lua").init("mods/copis_gun/CANADA_li
 ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/copis_gun/files/scripts/gun/actions.lua" )  -- add bullets
 
 --[[ Audio Attrbs.
-Shoot sound     |   https://soundbible.com/2120-9mm-Gunshot.html 
-No ammo sound   |   https://soundbible.com/1405-Dry-Fire-Gun.html
-Reload sound    |   https://soundbible.com/tags-insert-clip.html
++-----------------+---------------------------------------------------+
+| name            |   link                                            |
++-----------------+---------------------------------------------------+
+| Shoot sound     |   https://soundbible.com/2120-9mm-Gunshot.html    |
+| No ammo sound   |   https://soundbible.com/1405-Dry-Fire-Gun.html   |
+| Reload sound    |   https://soundbible.com/1404-Pop-Clip-In.html    |
++-----------------+---------------------------------------------------+
 ]]
-ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")                                   -- add audio
+ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")   -- add audio
 
 function OnPlayerSpawned( player_entity )           -- This runs when player entity has been created
 	if not GameHasFlagRun("copis_gun_spawned") then
