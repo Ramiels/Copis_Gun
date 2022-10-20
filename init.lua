@@ -23,10 +23,6 @@ function OnPlayerSpawned( player_entity )           -- This runs when player ent
 	end
 end
 
-function OnWorldPostUpdate()    -- Handle resetting display iteration
-    GlobalsSetValue("copi_gun_display_iter", "0")
-end
-
 -- Add translations
 local function append_translations( filepath, translation_file )
     if translation_file == nil then
