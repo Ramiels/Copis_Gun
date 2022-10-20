@@ -1,6 +1,38 @@
 dofile_once("mods/copis_gun/CANADA_lib/init.lua").init("mods/copis_gun/CANADA_lib")                     -- CANADA initer
 ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/copis_gun/files/scripts/gun/actions.lua" )  -- add bullets
+dofile_once("mods/copis_gun/CANADA_lib/utils.lua")
 
+-- Silver Bullet
+RegisterCanadaAction(
+    "mods/copis_gun/files/entities/misc/custom_cards/silver_bullet.xml",
+    45, 17, 17, false)
+
+-- Silver Magnum
+RegisterCanadaAction(
+    "mods/copis_gun/files/entities/misc/custom_cards/silver_magnum.xml",
+    60, 17, 17, false)
+
+-- Rose Bullet
+RegisterCanadaAction(
+    "mods/copis_gun/files/entities/misc/custom_cards/rose_bullet.xml",
+    60, 18, 18, false)
+
+-- Rose Magnum
+RegisterCanadaAction(
+    "mods/copis_gun/files/entities/misc/custom_cards/rose_magnum.xml",
+    90, 18, 18, false)
+
+-- Bloody Bullet
+RegisterCanadaAction(
+    "mods/copis_gun/files/entities/misc/custom_cards/bloody_bullet.xml",
+    90, 8, 8, false)
+
+-- Bloody Magnum
+RegisterCanadaAction(
+    "mods/copis_gun/files/entities/misc/custom_cards/bloody_magnum.xml",
+    120, 8, 8, false)
+
+ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")
 --[[ Audio Attrbs.
 +-----------------+---------------------------------------------------+
 | name            |   link                                            |
@@ -10,7 +42,10 @@ ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/copis_gun/files/scri
 | Reload sound    |   https://soundbible.com/1404-Pop-Clip-In.html    |
 +-----------------+---------------------------------------------------+
 ]]
-ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")   -- add audio
+
+function OnWorldPostUpdate()
+    CanadaGuiPostUpdate()
+end
 
 function OnPlayerSpawned( player_entity )           -- This runs when player entity has been created
 	if not GameHasFlagRun("copis_gun_spawned") then
@@ -23,7 +58,6 @@ function OnPlayerSpawned( player_entity )           -- This runs when player ent
 	end
 end
 
--- Add translations
 local function append_translations( filepath, translation_file )
     if translation_file == nil then
         translation_file = "data/translations/common.csv";
