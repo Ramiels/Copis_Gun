@@ -4,8 +4,8 @@ local to_insert = {
 
     {
         id                  = "COPIS_GUN_SILVER_BULLET",
-        name                = "Silver round",
-        description         = "A magazine of 17 silver bullets, it is rumored to have come from the moon. Not compatible with magical wands.",
+        name                = "$action_name_copis_gun_silver_bullet",
+        description         = "$action_desc_copis_gun_silver_bullet",
         sprite              = "mods/copis_gun/files/ui_gfx/gun_actions/silver_bullet.png",
         related_projectiles = { "mods/copis_gun/files/entities/projectiles/silver_bullet.xml" },
         type                = ACTION_TYPE_PROJECTILE,
@@ -36,8 +36,8 @@ local to_insert = {
 
     {
         id                  = "COPIS_GUN_SILVER_MAGNUM",
-        name                = "Silver magnum",
-        description         = "A magazine of 17 oversized silver bullets, it is rumored to have come from the moon. Not compatible with magical wands.",
+        name                = "$action_name_copis_gun_silver_magnum",
+        description         = "$action_desc_copis_gun_silver_magnum",
         sprite              = "mods/copis_gun/files/ui_gfx/gun_actions/silver_magnum.png",
         related_projectiles = { "mods/copis_gun/files/entities/projectiles/silver_magnum.xml" },
         type                = ACTION_TYPE_PROJECTILE,

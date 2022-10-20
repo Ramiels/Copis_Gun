@@ -1,2 +1,14 @@
-action_name_copis_gun_modify_card,"Modular Modifier",,,,,,,,,,,,
-action_desc_copis_gun_modify_card,"A spell which bends to your whims",,,,,,,,,,,,
+action_name_copis_gun_silver_bullet,"Silver round",,,,,,,,,,,,
+action_desc_copis_gun_silver_bullet,"A magazine of 17 silver bullets, it is rumored to have come from the moon. Not compatible with magical wands.",,,,,,,,,,,,
+action_name_copis_gun_silver_magnum,"Silver magnum",,,,,,,,,,,,
+action_desc_copis_gun_silver_magnum,"A magazine of 17 oversized silver bullets, it is rumored to have come from the moon. Not compatible with magical wands.",,,,,,,,,,,,
+
+action_name_copis_gun_rose_bullet,"Rose round",,,,,,,,,,,,
+action_desc_copis_gun_rose_bullet,"A magazine of 18 rose bullets, they will fire in bursts of 3 and seek out your foes. Not compatible with magical wands.",,,,,,,,,,,,
+action_name_copis_gun_rose_magnum,"Rose magnum",,,,,,,,,,,,
+action_desc_copis_gun_rose_magnum,"A magazine of 18 oversized rose bullets, they will explode into a flurry of petals. Not compatible with magical wands.",,,,,,,,,,,,
+
+action_name_copis_gun_bloody_bullet,"Bloody round",,,,,,,,,,,,
+action_desc_copis_gun_bloody_bullet,"A magazine of 6 bloody bullets, they will drain the vitality of those they strike. Not compatible with magical wands.",,,,,,,,,,,,
+action_name_copis_gun_bloody_magnum,"Bloody magnum",,,,,,,,,,,,
+action_desc_copis_gun_bloody_magnum,"A magazine of 6 oversized bloody bullets, your last shot will cause bloody spikes to erupt from the ground. Not compatible with magical wands.",,,,,,,,,,,,
