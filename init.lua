@@ -5,32 +5,32 @@ dofile_once("mods/copis_gun/CANADA_lib/canada_utils.lua")
 -- Silver Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/silver_bullet.xml",
-    45, 17, 17, false)
+    45, 17, 17, false, true)
 
 -- Silver Magnum
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/silver_magnum.xml",
-    60, 17, 17, false)
+    60, 17, 17, false, true)
 
 -- Rose Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/rose_bullet.xml",
-    60, 18, 18, false)
+    60, 18, 18, false, true)
 
 -- Rose Magnum
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/rose_magnum.xml",
-    90, 18, 18, false)
+    90, 18, 18, false, true)
 
 -- Bloody Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/bloody_bullet.xml",
-    90, 8, 8, false)
+    90, 8, 8, false, true)
 
 -- Bloody Magnum
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/bloody_magnum.xml",
-    120, 8, 8, false)
+    120, 8, 8, false, true)
 
 ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")
 --[[ Audio Attrbs.
@@ -43,11 +43,10 @@ ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")
 +-----------------+---------------------------------------------------+
 ]]
 
-function OnWorldPostUpdate()
-    CanadaGuiPostUpdate()
-end
+local player_id = nil
 
 function OnPlayerSpawned( player_entity )           -- This runs when player entity has been created
+    player_id = player_entity
 	if not GameHasFlagRun("copis_gun_spawned") then
 		if ModIsEnabled("Twin-Linked") then         -- most based akimbo shooter sim
 			local x, y = EntityGetTransform(player_entity)
@@ -56,6 +55,15 @@ function OnPlayerSpawned( player_entity )           -- This runs when player ent
 		end
 		GameAddFlagRun("copis_gun_spawned")
 	end
+end
+
+function OnWorldPostUpdate()
+    CanadaGuiPostUpdate()
+    --[[
+    local x, y = EntityGetTransform(player_id)
+    if tonumber(GlobalsGetValue("canada_lib_reload_frame", "0")) == GameGetFrameNum() then
+        GamePlaySound( "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/reload", x, y )
+    end]]
 end
 
 local function append_translations( filepath, translation_file )
