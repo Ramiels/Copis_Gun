@@ -1,6 +1,6 @@
 dofile_once("mods/copis_gun/CANADA_lib/init.lua").init("mods/copis_gun/CANADA_lib")                     -- CANADA initer
 ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/copis_gun/files/scripts/gun/actions.lua" )  -- add bullets
-dofile_once("mods/copis_gun/CANADA_lib/utils.lua")
+dofile_once("mods/copis_gun/CANADA_lib/canada_utils.lua")
 
 -- Silver Bullet
 RegisterCanadaAction(
