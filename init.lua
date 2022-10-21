@@ -74,3 +74,5 @@ local function append_translations( filepath, translation_file )
 end
 
 append_translations( "mods/copis_gun/files/translations/common.csv" );
+
+DebugModTextFilePrint("mods/copis_gun/files/entities/misc/custom_cards/silver_magnum.xml")
