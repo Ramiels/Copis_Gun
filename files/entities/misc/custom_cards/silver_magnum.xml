@@ -16,46 +16,4 @@
             ></Transform>
     </InheritTransformComponent>
 
-    <VariableStorageComponent
-        _tags="int"
-        name="ammo_system_recharge_time"
-        value_int="60"
-        />
-
-    <VariableStorageComponent
-        _tags="int"
-        name="ammo_system_capacity"
-        value_int="17"
-        />
-
-    <VariableStorageComponent
-        _tags="int"
-        name="ammo_system_remaining"
-        value_int="17"
-        />
-
-    <VariableStorageComponent
-        _tags="bool"
-        name="ammo_system_recharge_while_shooting"
-        value_bool="false"
-        />
-
-    <VariableStorageComponent
-        _tags="bool"
-        name="ammo_system_locked"
-        value_bool="false"
-        />
-
-    <LuaComponent
-        _tags="enabled_in_inventory,enabled_in_hand"
-        script_source_file="mods/copis_gun/files/scripts/gun/ammo_controller.lua"
-        execute_every_n_frame="1"
-        ></LuaComponent>
-
-    <LuaComponent
-        _tags="enabled_in_hand"
-        script_source_file="mods/copis_gun/files/scripts/gun/ammo_display.lua"
-        execute_every_n_frame="1"
-        ></LuaComponent>
-
 </Entity>

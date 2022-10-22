@@ -1,0 +1,48 @@
+<Entity>
+
+    <Base file="data/entities/base_custom_card.xml">
+        <SpriteComponent image_file="mods/copis_gun/files/ui_gfx/gun_actions/silver_magnum.png"></SpriteComponent>
+
+        <ItemActionComponent
+            _tags="enabled_in_world"
+            action_id="COPIS_GUN_SILVER_MAGNUM"
+            ></ItemActionComponent>
+    </Base>
+
+    <InheritTransformComponent _tags="enabled_in_world,enabled_in_hand">
+        <Transform
+            position.x="8"
+            position.y="0"
+            ></Transform>
+    </InheritTransformComponent>
+
+    <VariableStorageComponent
+        tags="ammo_system_recharge_time"
+        name="ammo_system_recharge_time"
+        value_float="60"
+        ></VariableStorageComponent>
+    <VariableStorageComponent
+        tags="ammo_system_capacity"
+        name="ammo_system_capacity"
+        value_float="17"
+        ></VariableStorageComponent>
+    <VariableStorageComponent
+        tags="ammo_system_remaining"
+        name="ammo_system_remaining"
+        value_float="17"
+        ></VariableStorageComponent>
+    <VariableStorageComponent
+        tags="ammo_system_recharge_while_shooting"
+        name="ammo_system_recharge_while_shooting"
+        value_bool="false"
+        ></VariableStorageComponent>
+    <LuaComponent
+        execute_every_n_frame="1"
+        script_source_file="mods/copis_gun/CANADA_lib/canada_display.lua"
+        ></LuaComponent>
+    <LuaComponent
+        _tags="enabled_in_hand"
+        execute_every_n_frame="1"
+        script_source_file="mods/copis_gun/CANADA_lib/canada_controller.lua"
+        ></LuaComponent>
+</Entity>

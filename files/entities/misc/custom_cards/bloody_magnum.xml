@@ -1,11 +1,11 @@
 <Entity>
 
     <Base file="data/entities/base_custom_card.xml">
-        <SpriteComponent image_file="mods/copis_gun/files/ui_gfx/gun_actions/silver_bullet.png"></SpriteComponent>
+        <SpriteComponent image_file="mods/copis_gun/files/ui_gfx/gun_actions/bloody_magnum.png"></SpriteComponent>
 
         <ItemActionComponent
             _tags="enabled_in_world"
-            action_id="COPIS_GUN_SILVER_BULLET"
+            action_id="COPIS_GUN_BLOODY_MAGNUM"
             ></ItemActionComponent>
     </Base>
 

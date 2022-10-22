@@ -14,7 +14,6 @@ local to_insert = {
         spawn_probability   = "0,0",
         price               = 220,
         mana                = 0,
-        max_uses            = 170,
         custom_xml_file     = "mods/copis_gun/files/entities/misc/custom_cards/silver_bullet.xml",
         action              = function()
             c.fire_rate_wait = c.fire_rate_wait + 10.8;
@@ -48,7 +47,6 @@ local to_insert = {
         spawn_probability   = "0,0",
         price               = 330,
         mana                = 0,
-        max_uses            = 170,
         custom_xml_file     = "mods/copis_gun/files/entities/misc/custom_cards/silver_magnum.xml",
         action              = function()
             c.fire_rate_wait = c.fire_rate_wait + 14.6;
@@ -58,12 +56,12 @@ local to_insert = {
             end
             if (recursion_level or iteration) ~= nil then return; end
 
-            local ammo = CanadaCard(id)
-            if (ammo.remaining > 0) then
+            local canada_card = CanadaCard(CurrentCard(GetUpdatedEntityID()))
+            if (canada_card.ammo > 0) then
                 add_projectile("mods/copis_gun/files/entities/projectiles/silver_magnum.xml")
                 c.screenshake = c.screenshake + 0.2
                 c.damage_critical_chance = c.damage_critical_chance + 20
-                ammo.remaining = ammo.remaining - 1
+                canada_card.ammo = canada_card.ammo - 1
             else
                 local x, y = EntityGetTransform(GetUpdatedEntityID())
                 GamePlaySound( "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/blank", x, y )
@@ -82,7 +80,6 @@ local to_insert = {
         spawn_probability   = "0,0",
         price               = 220,
         mana                = 0,
-        max_uses            = 170,
         custom_xml_file     = "mods/copis_gun/files/entities/misc/custom_cards/rose_bullet.xml",
         action              = function()
             c.fire_rate_wait = c.fire_rate_wait + 10.8;
@@ -135,7 +132,6 @@ local to_insert = {
         spawn_probability   = "0,0",
         price               = 330,
         mana                = 0,
-        max_uses            = 170,
         custom_xml_file     = "mods/copis_gun/files/entities/misc/custom_cards/rose_magnum.xml",
         action              = function()
             c.fire_rate_wait = c.fire_rate_wait + 14.6;
