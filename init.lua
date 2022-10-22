@@ -5,32 +5,32 @@ dofile_once("mods/copis_gun/CANADA_lib/canada_utils.lua")
 -- Silver Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/silver_bullet.xml",
-    45, 17, 17, false, true)
+    3, 17, 17, false, true)
 
 -- Silver Magnum
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/silver_magnum.xml",
-    60, 17, 17, false, true)
+    4, 17, 17, false, true)
 
 -- Rose Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/rose_bullet.xml",
-    60, 18, 18, false, true)
+    4, 18, 18, false, true)
 
 -- Rose Magnum
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/rose_magnum.xml",
-    90, 18, 18, false, true)
+    5, 18, 18, false, true)
 
 -- Bloody Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/bloody_bullet.xml",
-    90, 8, 8, false, true)
+    5, 8, 8, false, true)
 
 -- Bloody Magnum
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/bloody_magnum.xml",
-    120, 8, 8, false, true)
+    7, 8, 8, false, true)
 
 ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")
 --[[ Audio Attrbs.
@@ -43,10 +43,8 @@ ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")
 +-----------------+---------------------------------------------------+
 ]]
 
-local player_id = nil
 
 function OnPlayerSpawned( player_entity )           -- This runs when player entity has been created
-    player_id = player_entity
 	if not GameHasFlagRun("copis_gun_spawned") then
 		if ModIsEnabled("Twin-Linked") then         -- most based akimbo shooter sim
 			local x, y = EntityGetTransform(player_entity)
@@ -82,5 +80,4 @@ local function append_translations( filepath, translation_file )
 end
 
 append_translations( "mods/copis_gun/files/translations/common.csv" );
-
 DebugModTextFilePrint("mods/copis_gun/files/entities/misc/custom_cards/silver_magnum.xml")
