@@ -1,3 +1,4 @@
+---@diagnostic disable
 dofile("data/scripts/lib/mod_settings.lua") -- see this file for documentation on some of the features.
 local defaults = {
   -- these need to be set dynamically on first run based on resolution
