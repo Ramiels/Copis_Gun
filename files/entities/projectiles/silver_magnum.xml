@@ -8,7 +8,7 @@
             _enabled="1"
             air_friction="1"
             gravity_y="0"
-            mass="0.08"
+            mass="0.12"
             terminal_velocity="2000"
             ></VelocityComponent>
     </Base>
