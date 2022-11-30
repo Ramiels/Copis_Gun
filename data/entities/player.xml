@@ -4,7 +4,7 @@
   
   <Base file="data/entities/player_base.xml" include_children="1" /> 
 
-  <!--
+  <!-- replace to give glock starting weapon
   <Entity name="inventory_quick">
       <Entity><Base file="data/entities/items/starting_wand.xml" /></Entity> 
       <Entity><Base file="data/entities/items/starting_bomb_wand.xml" /></Entity>
@@ -19,4 +19,3 @@
   <Entity name="inventory_full"/>
 
 </Entity>
-
