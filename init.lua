@@ -33,6 +33,7 @@ RegisterCanadaAction(
     7, 8, 8, false, true)
 
 ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")
+
 --[[ Audio Attrbs.
 +-----------------+---------------------------------------------------+
 | name            |   link                                            |
@@ -42,7 +43,6 @@ ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")
 | Reload sound    |   https://soundbible.com/1404-Pop-Clip-In.html    |
 +-----------------+---------------------------------------------------+
 ]]
-
 
 function OnPlayerSpawned( player_entity )           -- This runs when player entity has been created
 	if not GameHasFlagRun("copis_gun_spawned") then
