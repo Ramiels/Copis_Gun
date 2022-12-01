@@ -5,32 +5,32 @@ dofile_once("mods/copis_gun/CANADA_lib/canada_utils.lua")
 -- Silver Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/silver_bullet.xml",
-    3, 17, 17, false, true)
+    3, 17, 17, false, true, false, "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/reload")
 
 -- Silver Magnum
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/silver_magnum.xml",
-    4, 17, 17, false, true)
+    4, 17, 17, false, true, false, "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/reload")
 
 -- Rose Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/rose_bullet.xml",
-    4, 18, 18, false, true)
+    4, 18, 18, false, true, false, "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/reload")
 
 -- Rose Magnum
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/rose_magnum.xml",
-    5, 18, 18, false, true)
+    5, 18, 18, false, true, false, "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/reload")
 
 -- Bloody Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/bloody_bullet.xml",
-    5, 8, 8, false, true)
+    5, 8, 8, false, true, false, "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/reload")
 
 -- Bloody Magnum
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/bloody_magnum.xml",
-    7, 8, 8, false, true)
+    7, 8, 8, false, true, false, "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/reload")
 
 ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")
 
