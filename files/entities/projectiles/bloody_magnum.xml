@@ -33,7 +33,7 @@
         lifetime_randomness="7"
         ragdoll_force_multiplier="0.015"
         hit_particle_force_multiplier="0.3"
-        muzzle_flash_file="mods/copis_gun/files/entities/particles/muzzle_flashes/glock_flash.xml"
+        muzzle_flash_file="mods/copis_gun/files/entities/particles/muzzle_flashes/gore_flash.xml"
         shoot_light_flash_r="255"
         shoot_light_flash_g="160"
         shoot_light_flash_b="160"
@@ -44,11 +44,12 @@
         <config_explosion
             never_cache="1"
             damage="0.0"
-            camera_shake="0.5"
-            explosion_radius="2"
-            explosion_sprite="data/particles/explosion_008.xml"
+            camera_shake="0.2"
+            explosion_sprite="data/particles/bloodsplatters/bloodsplatter_2.xml"
             explosion_sprite_lifetime="0"
-            create_cell_probability="0"
+            create_cell_probability="3"
+            create_cell_material="blood"
+            explosion_radius="2"
             hole_destroy_liquid="0"
             hole_enabled="1"
             ray_energy="400000"
@@ -68,6 +69,7 @@
             light_enabled="0"
             stains_enabled="1"
             stains_radius="3"
+            hole_image="data/temp/explosion_hole.png" 
             ></config_explosion>
     </ProjectileComponent>
 

@@ -45,10 +45,11 @@
             never_cache="1"
             damage="0.0"
             camera_shake="0.5"
-            explosion_radius="2"
-            explosion_sprite="data/particles/explosion_008.xml"
+            explosion_radius="1"
+            explosion_sprite="data/particles/star.xml"
             explosion_sprite_lifetime="0"
             create_cell_probability="0"
+            load_this_entity=""
             hole_destroy_liquid="0"
             hole_enabled="1"
             ray_energy="400000"
@@ -82,7 +83,7 @@
 
     <!-- dense emitter -->
     <ParticleEmitterComponent
-        emitted_material_name="spark_teal"
+        emitted_material_name="spark_red"
         offset.x="0"
         offset.y="0"
         x_pos_offset_min="-0.5"
@@ -114,7 +115,7 @@
 
     <!-- sparse emitter -->
     <ParticleEmitterComponent
-        emitted_material_name="spark_teal"
+        emitted_material_name="spark_red"
         offset.x="0"
         offset.y="0"
         x_pos_offset_min="-0.5"
@@ -146,7 +147,7 @@
 
     <!-- very sparse emitter -->
     <ParticleEmitterComponent
-        emitted_material_name="spark_teal"
+        emitted_material_name="spark_red"
         offset.x="0"
         offset.y="0"
         x_pos_offset_min="-0.5"

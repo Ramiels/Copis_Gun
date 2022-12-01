@@ -37,7 +37,7 @@
         physics_impulse_coeff="0"
         penetrate_entities="0"
         penetrate_world="1"
-        damage_every_x_frames="25"
+        damage_every_x_frames="64"
         collide_with_world="0"
         collide_with_tag=""
         >
@@ -46,5 +46,4 @@
             explosion_radius="0"
             ></config_explosion>
     </ProjectileComponent>
-
 </Entity>
