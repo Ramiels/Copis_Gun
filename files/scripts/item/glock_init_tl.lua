@@ -2,8 +2,8 @@ dofile("data/scripts/lib/utilities.lua")
 dofile("data/scripts/gun/procedural/gun_action_utils.lua")
 
 local entity_id = GetUpdatedEntityID()
-local type = ModSettingGet("Copis_gun.bullet_type_MAINHAND")
-local magnum = ModSettingGet("Copis_gun.bullet_magnum_MAINHAND")
+local type = ModSettingGet("Copis_gun.bullet_type_OFFHAND")
+local magnum = ModSettingGet("Copis_gun.bullet_magnum_OFFHAND")
 local options_m = {
     "COPIS_GUN_SILVER_MAGNUM",
     "COPIS_GUN_ROSE_MAGNUM",
@@ -20,5 +20,4 @@ if magnum then
 else
     result = options_r[type]
 end
-GamePrint(result)
 AddGunAction( entity_id, result )
