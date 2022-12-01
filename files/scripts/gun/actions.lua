@@ -82,7 +82,7 @@ local to_insert = {
         mana                = 0,
         custom_xml_file     = "mods/copis_gun/files/entities/misc/custom_cards/rose_bullet.xml",
         action              = function()
-            c.fire_rate_wait = c.fire_rate_wait + 10.8;
+            c.fire_rate_wait = c.fire_rate_wait + 32;
             if reflecting then
                 Reflection_RegisterProjectile("mods/copis_gun/files/entities/projectiles/rose_bullet.xml")
                 Reflection_RegisterProjectile("mods/copis_gun/files/entities/projectiles/rose_bullet.xml")
@@ -133,7 +133,7 @@ local to_insert = {
         mana                = 0,
         custom_xml_file     = "mods/copis_gun/files/entities/misc/custom_cards/rose_magnum.xml",
         action              = function()
-            c.fire_rate_wait = c.fire_rate_wait + 14.6;
+            c.fire_rate_wait = c.fire_rate_wait + 22.6;
             if reflecting then
                 Reflection_RegisterProjectile("mods/copis_gun/files/entities/projectiles/rose_magnum.xml")
                 return;
@@ -165,7 +165,7 @@ local to_insert = {
         mana                = 0,
         custom_xml_file     = "mods/copis_gun/files/entities/misc/custom_cards/bloody_bullet.xml",
         action              = function()
-            c.fire_rate_wait = c.fire_rate_wait + 10.8;
+            c.fire_rate_wait = c.fire_rate_wait + 14;
             if reflecting then
                 Reflection_RegisterProjectile("mods/copis_gun/files/entities/projectiles/bloody_bullet.xml")
                 return;
@@ -198,7 +198,7 @@ local to_insert = {
         mana                = 0,
         custom_xml_file     = "mods/copis_gun/files/entities/misc/custom_cards/bloody_magnum.xml",
         action              = function()
-            c.fire_rate_wait = c.fire_rate_wait + 14.6;
+            c.fire_rate_wait = c.fire_rate_wait + 20;
             if reflecting then
                 Reflection_RegisterProjectile("mods/copis_gun/files/entities/projectiles/bloody_magnum.xml")
                 return;
