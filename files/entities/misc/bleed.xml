@@ -1,0 +1,13 @@
+<Entity>
+    <!-- WHAT THE FUCK WHY ISNT THIS WORKING??? -->
+    <InheritTransformComponent/>
+	<LifetimeComponent
+		lifetime="300"
+		/>
+
+    <LuaComponent 
+        script_damage_received="mods/copis_gun/scripts/bleed_hit.lua"
+        execute_every_n_frame="-1" />
+    <LuaComponent script_source_file="mods/copis_gun/scripts/bleed_tick.lua"
+        execute_every_n_frame="15" />
+</Entity>

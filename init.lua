@@ -2,6 +2,8 @@ dofile_once("mods/copis_gun/CANADA_lib/init.lua").init("mods/copis_gun/CANADA_li
 ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/copis_gun/files/scripts/gun/actions.lua" )  -- add bullets
 dofile_once("mods/copis_gun/CANADA_lib/canada_utils.lua")
 
+-- # Handle CANADA system variables
+
 -- Silver Bullet
 RegisterCanadaAction(
     "mods/copis_gun/files/entities/misc/custom_cards/silver_bullet.xml",
@@ -44,6 +46,10 @@ ModRegisterAudioEventMappings("mods/copis_gun/files/audio/GUIDs.txt")
 +-----------------+---------------------------------------------------+
 ]]
 
+if HasFlagPersistent("copis_gun_dontspawnthisshit") then
+    RemoveFlagPersistent("copis_gun_dontspawnthisshit")
+end
+
 function OnPlayerSpawned( player_entity )           -- This runs when player entity has been created
 	if not GameHasFlagRun("copis_gun_spawned") then
 		if ModIsEnabled("Twin-Linked") then         -- most based akimbo shooter sim
@@ -79,5 +85,5 @@ local function append_translations( filepath, translation_file )
     end
 end
 
-append_translations( "mods/copis_gun/files/translations/common.csv" );
-DebugModTextFilePrint("mods/copis_gun/files/entities/misc/custom_cards/silver_magnum.xml")
+append_translations( "mods/copis_gun/files/translations/common.csv" )
+--DebugModTextFilePrint("mods/copis_gun/files/entities/misc/custom_cards/silver_magnum.xml")

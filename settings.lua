@@ -41,6 +41,8 @@ function ModSettingsGui(gui, in_main_menu)
                 GuiLayoutEnd(gui)
             GuiLayoutEnd(gui)
             GuiLayoutAddVerticalSpacing(gui, 30)
+            GuiColorSetForNextWidget(gui, 0.9, 0.9, 0.9, 0.5)
+            GuiText(gui, 0, 0, "PR: Bloody Bullet, Bloody Magnum, Rose Magnum, and Silver Magnum are WIP!")
             GuiColorSetForNextWidget(gui, 0.9, 0.9, 0.9, 0.9)
             GuiText(gui, 0, 0, "Press [LMB] on the bullet to cycle types, and [RMB] to toggle Magnum mode.")
             GuiLayoutBeginHorizontal(gui, 5, 0, false, 10, 0)
@@ -96,6 +98,7 @@ function ModSettingsGui(gui, in_main_menu)
                     local magnum = ModSettingGet("Copis_gun.bullet_magnum_" .. text[i]) or false
                     local data = spelldata[type][magnum and "magnum" or "regular"]
                     GuiOptionsAddForNextWidget(gui, 16)
+                    GuiOptionsAddForNextWidget(gui, 6)
                     local lmb, rmb = GuiImageButton(gui, new_id(), 0, 0, "",
                         data.sprite or "data/ui_gfx/gun_actions/_unidentified.png")
                     GuiTooltip(gui, data.name, data.desc);
@@ -112,8 +115,15 @@ function ModSettingsGui(gui, in_main_menu)
                 GuiLayoutEnd(gui)
             end
             GuiLayoutEnd(gui)
+            GuiLayoutBeginVertical(gui, 0, 4, false, 0, 5)
+                local slider_old = tonumber(ModSettingGet("Copis_gun.timer_delay")) or 10
+                local slider_new = GuiSlider(gui, new_id(), 0, 0, "Manual reload timer (Frames)", slider_old, 1, 60, 10, 1, "", 60)
+                if slider_old ~= slider_new then
+                    ModSettingSet("Copis_gun.timer_delay", slider_new)
+                end
+            GuiLayoutEnd(gui)
         GuiLayoutEnd(gui)
-        GuiLayoutAddVerticalSpacing(gui, 130)
+        GuiLayoutAddVerticalSpacing(gui, 160)
     else
         GuiLayoutBeginHorizontal(gui, 0, 0, false, 5, 5)
             id = 21694201337

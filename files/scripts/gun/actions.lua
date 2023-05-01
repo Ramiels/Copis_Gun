@@ -24,12 +24,17 @@ local to_insert = {
             end
             if (recursion_level or iteration) ~= nil then return; end
 
-            local canada_card = CanadaCard(CurrentCard(GetUpdatedEntityID()))
-            if (canada_card.ammo > 0) then
+            local canada_card = CanadaCard(CurrentCard())
+            local always_cast = current_action.permanently_attached
+            if always_cast or (canada_card.ammo > 0) then
                 add_projectile("mods/copis_gun/files/entities/projectiles/silver_bullet.xml")
                 c.screenshake = c.screenshake + 0.1
                 c.damage_critical_chance = c.damage_critical_chance + 20
-                canada_card.ammo = canada_card.ammo - 1
+                if not always_cast then
+                    canada_card.ammo = canada_card.ammo - 1
+                else
+                    canada_card.ammo = canada_card.capacity -- the fuck?? why doesn't this work??? literally 1984... whatever
+                end
             else
                 local x, y = EntityGetTransform(GetUpdatedEntityID())
                 GamePlaySound( "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/blank", x, y )
@@ -58,12 +63,17 @@ local to_insert = {
             end
             if (recursion_level or iteration) ~= nil then return; end
 
-            local canada_card = CanadaCard(CurrentCard(GetUpdatedEntityID()))
-            if (canada_card.ammo > 0) then
+            local canada_card = CanadaCard(CurrentCard())
+            local always_cast = current_action.permanently_attached
+            if always_cast or (canada_card.ammo > 0) then
                 add_projectile("mods/copis_gun/files/entities/projectiles/silver_magnum.xml")
                 c.screenshake = c.screenshake + 0.2
                 c.damage_critical_chance = c.damage_critical_chance + 20
-                canada_card.ammo = canada_card.ammo - 1
+                if not always_cast then
+                    canada_card.ammo = canada_card.ammo - 1
+                else
+                    canada_card.ammo = canada_card.capacity -- the fuck?? why doesn't this work??? literally 1984... whatever
+                end
             else
                 local x, y = EntityGetTransform(GetUpdatedEntityID())
                 GamePlaySound( "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/blank", x, y )
@@ -94,8 +104,9 @@ local to_insert = {
             end
             if (recursion_level or iteration) ~= nil then return; end
 
-            local canada_card = CanadaCard(CurrentCard(GetUpdatedEntityID()))
-            if (canada_card.ammo > 0) then
+            local canada_card = CanadaCard(CurrentCard())
+            local always_cast = current_action.permanently_attached
+            if always_cast or (canada_card.ammo > 0) then
                 c.screenshake = c.screenshake + 0.1
                 c.damage_critical_chance = c.damage_critical_chance + 20
                 BeginProjectile("mods/copis_gun/files/entities/projectiles/burst_fire.xml");
@@ -115,7 +126,11 @@ local to_insert = {
                         SetProjectileConfigs();
                     EndTrigger();
                 EndProjectile()
-                canada_card.ammo = canada_card.ammo - 3
+                if not always_cast then
+                    canada_card.ammo = canada_card.ammo - 3
+                else
+                    canada_card.ammo = canada_card.capacity -- the fuck?? why doesn't this work??? literally 1984... whatever
+                end
             else
                 local x, y = EntityGetTransform(GetUpdatedEntityID())
                 GamePlaySound( "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/blank", x, y )
@@ -144,12 +159,17 @@ local to_insert = {
             end
             if (recursion_level or iteration) ~= nil then return; end
 
-            local canada_card = CanadaCard(CurrentCard(GetUpdatedEntityID()))
-            if (canada_card.ammo > 0) then
+            local canada_card = CanadaCard(CurrentCard())
+            local always_cast = current_action.permanently_attached
+            if always_cast or (canada_card.ammo > 0) then
                 add_projectile("mods/copis_gun/files/entities/projectiles/rose_magnum.xml")
                 c.screenshake = c.screenshake + 0.2
                 c.damage_critical_chance = c.damage_critical_chance + 20
-                canada_card.ammo = canada_card.ammo - 1
+                if not always_cast then
+                    canada_card.ammo = canada_card.ammo - 1
+                else
+                    canada_card.ammo = canada_card.capacity -- the fuck?? why doesn't this work??? literally 1984... whatever
+                end
             else
                 local x, y = EntityGetTransform(GetUpdatedEntityID())
                 GamePlaySound( "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/blank", x, y )
@@ -177,12 +197,17 @@ local to_insert = {
             end
             if (recursion_level or iteration) ~= nil then return; end
 
-            local canada_card = CanadaCard(CurrentCard(GetUpdatedEntityID()))
-            if (canada_card.ammo > 0) then
+            local canada_card = CanadaCard(CurrentCard())
+            local always_cast = current_action.permanently_attached
+            if always_cast or (canada_card.ammo > 0) then
                 add_projectile("mods/copis_gun/files/entities/projectiles/bloody_bullet.xml")
                 c.screenshake = c.screenshake + 0.1
                 c.damage_critical_chance = c.damage_critical_chance + 20
-                canada_card.ammo = canada_card.ammo - 1
+                if not always_cast then
+                    canada_card.ammo = canada_card.ammo - 1
+                else
+                    canada_card.ammo = canada_card.capacity -- the fuck?? why doesn't this work??? literally 1984... whatever
+                end
             else
                 local x, y = EntityGetTransform(GetUpdatedEntityID())
                 GamePlaySound( "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/blank", x, y )
@@ -211,8 +236,9 @@ local to_insert = {
             end
             if (recursion_level or iteration) ~= nil then return; end
 
-            local canada_card = CanadaCard(CurrentCard(GetUpdatedEntityID()))
-            if (canada_card.ammo > 0) then
+            local canada_card = CanadaCard(CurrentCard())
+            local always_cast = current_action.permanently_attached
+            if always_cast or (canada_card.ammo > 0) then
                 if canada_card.ammo == 1 then
                     add_projectile("mods/copis_gun/files/entities/projectiles/bloody_thorn.xml")
                     c.screenshake = c.screenshake + 0.4
@@ -222,7 +248,11 @@ local to_insert = {
                     c.screenshake = c.screenshake + 0.2
                     c.damage_critical_chance = c.damage_critical_chance + 20
                 end
-                canada_card.ammo = canada_card.ammo - 1
+                if not always_cast then
+                    canada_card.ammo = canada_card.ammo - 1
+                else
+                    canada_card.ammo = canada_card.capacity -- the fuck?? why doesn't this work??? literally 1984... whatever
+                end
             else
                 local x, y = EntityGetTransform(GetUpdatedEntityID())
                 GamePlaySound( "mods/copis_gun/files/audio/Copis_Gun.bank", "9mm/blank", x, y )
@@ -231,6 +261,9 @@ local to_insert = {
     },
 }
 
-for k, v in ipairs(to_insert) do
-    table.insert(actions, v)
+for i = 1, #to_insert do
+    to_insert[i].spawn_requires_flag = "copis_gun_dontspawnthisshit"
+    to_insert[i].author = "Copi"
+    to_insert[i].mod = "Copi's Gun"
+    actions[#actions+1] = to_insert[i]
 end

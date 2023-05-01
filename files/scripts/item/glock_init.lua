@@ -14,7 +14,7 @@ local options_r = {
     "COPIS_GUN_ROSE_BULLET",
     "COPIS_GUN_BLOODY_BULLET",
 }
-local result = ""   -- this line was the culprit, without a default bullet set it would try to add the spell with the ID "" (empty) to the wand
+local result = "COPIS_GUN_SILVER_BULLET"   -- this line was the culprit, without a default bullet set it would try to add the spell with the ID "" (empty) to the wand
 if magnum then
     result = options_m[type]
 else
